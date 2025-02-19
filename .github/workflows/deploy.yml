@@ -3,32 +3,31 @@ name: Deploy to Netlify
 on:
   push:
     branches:
-      - master  # Déploie lorsque tu fais un push sur la branche master
+      - master  
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Utilise l'environnement Ubuntu pour l'action
+    runs-on: ubuntu-latest  
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Vérifie ton code depuis GitHub
+        uses: actions/checkout@v3  
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Choisit la version de Node.js que tu veux utiliser
+          node-version: '18'  
 
       - name: Install dependencies
-        run: npm install  # Installe les dépendances du projet
+        run: npm install  
 
       - name: Build the project
-        run: npm run build  # Remplace cette commande si ton build est différent
+        run: npm run build  
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1
         with:
-          publish-dir: ./build  # Remplace cela par le répertoire de publication de ton projet (par exemple, 'dist' ou 'build')
+          publish-dir: ./dist  # ✅ Adapté à Vite
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Utilise le jeton d'authentification de Netlify
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  # Ajoute l'ID de ton site Netlify dans les secrets
-
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  
