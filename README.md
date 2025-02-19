@@ -17,3 +17,4 @@ Ce projet est destiné à valider les connaissances en DevOps des élèves de 3�
 
 ## Déploiement
 Le projet est déployé sur [Netlify](https://musical-longma-e5f64b.netlify.app/).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2873929a-72d8-442e-9908-d75f68b0fa2a/deploy-status)](https://app.netlify.com/sites/frolicking-platypus-425352/deploys)
