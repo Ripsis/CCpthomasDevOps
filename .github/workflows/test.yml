@@ -3,27 +3,26 @@ name: Run Tests
 on:
   push:
     branches:
-      - master  # Exécute l'action lorsque tu fais un push sur la branche master
+      - main
   pull_request:
     branches:
-      - master  # Exécute aussi l'action lors de la création d'une pull request vers master
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Exécute l'action sur un environnement Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # Vérifie ton code depuis GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Choisit la version de Node.js que tu veux utiliser
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install  # Installe les dépendances du projet
+        run: npm install
 
       - name: Run tests
-        run: npm test  # Lance la commande pour exécuter les tests
-
+        run: npm test
