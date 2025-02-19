@@ -1,4 +1,3 @@
-![Resultat des tests](https://github.com/Ripsis/CCpthomasDevOps/actions/workflows/tests.yml/badge.svg)
 # DevOps Project
 
 Ce projet est destiné à valider les connaissances en DevOps des élèves de 3ème année d'informatique.
@@ -11,3 +10,7 @@ Ce projet est destiné à valider les connaissances en DevOps des élèves de 3�
 4. Implémentez une github action pour déployer automatiquement le site sur un hebergement gratuit (Netlify)
 
 ## Test Results
+![Resultat des tests](https://img.shields.io/github/workflow/status/Ripsis/CCpthomasDevOps/Run%20Tests?label=Tests&logo=github)
+
+## Déploiement
+Le projet est déployé sur [Netlify](https://musical-longma-e5f64b.netlify.app/).
